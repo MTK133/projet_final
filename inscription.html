@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sidi_beats</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body>
+    <header>
+        <nav class="menu">
+            <a href="acceuil.html">Accueil</a>
+            <a class="active_a" href="inscription.html">Inscription</a>
+            <a href="panier.html">Ticket</a>
+        </nav>
+
+        <img src="images\SIDI.BEATS.jpg" alt="Header" width="100%" height="400" />
+    </header>
+    <form id="form_inscription" class="section_container">
+        <h2 class="section_title">Inscription</h2>
+        <label for="fname">First Name : * </label>
+        <input type="text" id="fname" name="fname" required minlength="3" size="15">
+
+        <label for="lname">Last Name : </label>
+        <input type="text" id="lname" name="lname" required minlength="3" size="15">
+        <label for="address">Address : </label>
+        <input type="email" name="address" id="address" cols="30" rows="5"></input>
+
+        <label for="phone">Phone Number : *</label>
+        <input type="text" id="phone" name="phone" required size="15">
+        <label for="date">Date Of Birth : </label>
+        <input type="date" id="date" name="date" required size="15">
+        <input type="submit" value="Submit" required size="10">
+        <input type="reset" value="Reset" required size="10">
+
+    </form>
+    <footer class="section_container">
+        <h2 class="section_title">Contact Us</h2>
+        <h5 align="right"> NoWhere Street </h5>
+        <a href="mohamedkossentini042@gmail.com">Email : mohamedkossentini042@gmail.com</a>
+    </footer>
+    <script src="scripts/inscription.js"></script>
+</body>
+
+</html>

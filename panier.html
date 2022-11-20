@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sidi_beats</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body>
+
+    <header>
+        <nav class="menu">
+            <a href="acceuil.html">Accueil</a>
+            <a href="inscription.html">Inscription</a>
+            <a class="active_a" href="panier.html">Ticket</a>
+        </nav>
+
+    </header>
+    <section class="hello_client">
+        <h1 class="section_title">CLIENT DATA:</h1>
+    </section>
+    <section id="tickets_container_img" class="section_container">
+        <h1 class="section_title">AVAIBLE TICKETS</h1>
+        <div>
+            <img src="images/IP.png" alt="">
+            <img src="images/VIP.png" alt="">
+            <img src="images/UVIP.png" alt="">
+        </div>
+    </section>
+    <form id="ticker_form" class="section_container">
+        <h1 class="section_title">CHOOSE YOUR TICKET</h1>
+        <label>Ticket</label>
+
+        <label name="IP" for="IP">
+            Count IP:
+        </label>
+        <input type="number" name="IP" />
+        <label name="VIP" for="VIP">
+            Count VIP:
+        </label>
+        <input type="number" name="VIP" />
+        <label name="UVIP" for="UVIP">
+            Count UVIP:
+        </label>
+        <input type="number" name="UVIP" />
+        <input type="submit" value="CONFIRM" />
+    </form>
+    <footer class="section_container">
+        <h2 class="section_title">Contact Us</h2>
+        <h5 alignt="right"> NoWhere Street </h5>
+        <a href="mohamedkossentini042@gmail.com">Email : mohamedkossentini042@gmail.com</a>
+    </footer>
+    <script>
+        const hc = document.querySelector(".hello_client")
+        let obj = localStorage.getItem("client_data")
+        obj = JSON.parse(obj);
+        console.log(obj)
+        if (obj != null) {
+            let ul = document.createElement("ul");
+            for (key in obj) {
+                let li = document.createElement("li");
+                li.innerHTML = key + ": " + obj[key];
+                ul.append(li);
+            }
+            hc.className = "section_container";
+            hc.append(ul)
+            obj = JSON.parse(localStorage.getItem("tickets"));
+            if (obj != null) {
+                let ul = document.createElement("ul");
+                for (key in obj) {
+                    let li = document.createElement("li");
+                    li.innerHTML = key + ": " + obj[key];
+                    ul.append(li);
+                }
+                hc.append(ul)
+            }
+        } else {
+            let p = document.createElement("h1")
+            p.innerHTML = "No data avaible please register";
+            hc.appendChild(p)
+        }
+    </script>
+    <script src="/scripts/panier.js"></script>
+</body>
+
+</html>
